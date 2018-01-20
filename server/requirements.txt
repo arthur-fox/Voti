@@ -1,0 +1,3 @@
+flask
+yoti==2.0.4
+python-dotenv>=0.7.1

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+</head>
+<body>
+    <h3><a href="/">Home</a></h3>
+    <table>
+        {% if user_id %}
+            <tr>
+                <td>Remember me ID:</td>
+                <td>{{user_id}}</td>
+            </tr>
+        {% endif %}
+
+        {% if given_names %}
+            <tr>
+                <td>Given Names:</td>
+                <td>{{given_names}}</td>
+            </tr>
+        {% endif %}
+
+        {% if family_name %}
+            <tr>
+                <td>Family Name:</td>
+                <td>{{family_name}}</td>
+            </tr>
+        {% endif %}
+
+
+        {% if email_address %}
+            <tr>
+                <td>Email Address:</td>
+                <td>{{email_address}}</td>
+            </tr>
+        {% endif %}
+
+        {% if nationality %}
+            <tr>
+                <td>Nationality:</td>
+                <td>{{nationality}}</td>
+            </tr>
+        {% endif %}
+    </table>
+</body>
+</html>
