@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import Nav from "./../components/Nav";
+import React, { Component } from "react"
+import Nav from "./../components/Nav"
+import { Link } from 'react-router-dom'
 
 export default class Home extends Component {
   render() {
@@ -87,6 +88,7 @@ export default class Home extends Component {
                   src="http://placehold.it/300x200"
                   alt=""
                 />
+
                 <div className="card-body">
                   <h4 className="card-title">Card title</h4>
                   <p className="card-text">
@@ -109,13 +111,15 @@ export default class Home extends Component {
                   src="http://placehold.it/300x200"
                   alt=""
                 />
-                <div className="card-body">
-                  <h4 className="card-title">Card title</h4>
-                  <p className="card-text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Sapiente esse necessitatibus neque.
-                  </p>
-                </div>
+                <Link to="/petition">
+                    <div className="card-body">
+                        <h4 className="card-title">Card title</h4>
+                        <p className="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Sapiente esse necessitatibus neque.
+                        </p>
+                    </div>
+                </Link>
                 <div className="card-footer">
                   <a href="#" className="btn btn-primary">
                     Find Out More!
