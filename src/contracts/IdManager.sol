@@ -6,7 +6,6 @@ contract IdManager is Ownable {
 
     struct ID {
         bool exists;
-        uint rememberMeId;
         bytes32 name;
         bytes32 region;
     }
@@ -17,11 +16,10 @@ contract IdManager is Ownable {
     function IdManager() public {}
 
     // "onlyOwner" modifier only allows the controlling entity to register an id
-    function registerId(address _address, uint _rememberMeId, bytes32 _name, bytes32 _region) public onlyOwner {
+    function registerId(address _address, bytes32 _name, bytes32 _region) public onlyOwner {
         require(!idMap[_address].exists);
         ID storage theId = idMap[_address];
         theId.exists = true;
-        theId.rememberMeId = _rememberMeId;
         theId.name = _name;
         theId.region = _region;
     }
