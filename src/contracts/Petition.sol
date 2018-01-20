@@ -1,8 +1,11 @@
 pragma solidity ^0.4.18;
 
 import "./IdManager.sol";
+import "./SafeMath.sol";
 
 contract Petition {
+
+    using SafeMath for *;
 
     address idManager;
     string description;
