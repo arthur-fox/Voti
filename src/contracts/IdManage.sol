@@ -1,29 +1,31 @@
 pragma solidity ^0.4.18;
 
-contract IdManager {
+import "./Ownable.sol";
 
-    struct Id {
+contract IdManager is Ownable {
+
+    struct ID {
+        bool exists;
         uint rememberMeId;
         bytes32 name;
         bytes32 region;
     }
 
-    mapping(address => Id) idMap;
+    mapping(address => ID) public idMap;
 
-    modifier isOwner {
-        require(msg.sender == owner);
+    // Entity that controls Id verification would instantiate the contract - therefore becoming "owner"
+    function IdManager() public {}
+
+    // "onlyOwner" modifier only allows the controlling entity to register an id
+    function registerId(address _address, uint _rememberMeId, bytes32 _name, bytes32 _region) public onlyOwner {
+        require(!idMap[_address].exists);
+        ID storage theId = idMap[_address];
+        theId.rememberMeId = _rememberMeId;
+        theId.name = _name;
+        theId.region = _region;
     }
 
-    function IdManager() {
-
+    function isValidId() public view returns (bool) {
+        
     }
-
-    function registerId(address add, uint rememberMeId, bytes32 name, bytes region) isYoti {
-
-    }
-
-    function isValidId() {
-
-    }
-
 }
