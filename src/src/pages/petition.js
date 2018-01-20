@@ -10,11 +10,11 @@ export default class Petition extends Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
-              <h1 className="mt-4">Post Title</h1>
+              <h1 className="mt-4">Sign Petition</h1>
 
               <p className="lead">
                 by
-                <a href="#">Start Bootstrap</a>
+                <a href="#">Rachel Black</a>
               </p>
 
               <hr />
@@ -156,20 +156,9 @@ export default class Petition extends Component {
 
             <div className="col-md-4">
               <div className="card my-4">
-                <h5 className="card-header">Search</h5>
+                <h5 className="card-header">Sign now!</h5>
                 <div className="card-body">
-                  <div className="input-group">
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Search for..."
-                    />
-                    <span className="input-group-btn">
-                      <button className="btn btn-secondary" type="button">
-                        Go!
-                      </button>
-                    </span>
-                  </div>
+                    Add button here!
                 </div>
               </div>
 
