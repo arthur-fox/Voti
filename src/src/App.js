@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SimpleStorageContract from '../build/contracts/SimpleStorage.json'
+import Petition from '../build/contracts/Petition.json'
 import getWeb3 from './utils/getWeb3'
 import Home from './pages/Home'
 
@@ -11,7 +11,10 @@ class App extends Component {
     super(props)
 
     this.state = {
-      storageValue: 0,
+      petitionInstance: null,
+      petitionDescription: null,
+      hasVoted: null,
+      totalVotes: 0,
       web3: null
     }
   }
@@ -27,42 +30,46 @@ class App extends Component {
       })
 
       // Instantiate contract once web3 provided.
-      this.instantiateContract()
+      this.instantiateContract() // TODO - In future we should not instantiate the contract here!!!
+    })
+    .then(() => {
+      return checkIfVotedAlready()
+    })
+    .then(result => {
+      // TODO - If we have voted already, make sure the user cannot vote!!!
     })
     .catch(() => {
       console.log('Error finding web3.')
     })
   }
+  
+  checkIfVotedAlready() {
+    let pInstance = this.state.petitionInstance
+
+    this.state.web3.eth.getAccounts((error, accounts) => {
+      return pInstance.hasVoted.call(accounts[0])
+    }).then((result) => {
+      return this.setState({ hasVoted: result.c[0] })
+    })
+  }
+
+  placeVote() {
+    let pInstance = this.state.petitionInstance
+
+    this.state.web3.eth.getAccounts((error, accounts) => {
+      return pInstance.vote({from: accounts[0]})
+    }).then(() => {
+      // TODO - we should wait until the vote has been registered by the blockchain - use solidity events for this!
+    })
+  }
 
   instantiateContract() {
-    /*
-     * SMART CONTRACT EXAMPLE
-     *
-     * Normally these functions would be called in the context of a
-     * state management library, but for convenience I've placed them here.
-     */
-
     const contract = require('truffle-contract')
-    const simpleStorage = contract(SimpleStorageContract)
-    simpleStorage.setProvider(this.state.web3.currentProvider)
+    const petition = contract(Petition)
+    petition.setProvider(this.state.web3.currentProvider)
 
-    // Declaring this for later so we can chain functions on SimpleStorage.
-    var simpleStorageInstance
-
-    // Get accounts.
-    this.state.web3.eth.getAccounts((error, accounts) => {
-      simpleStorage.deployed().then((instance) => {
-        simpleStorageInstance = instance
-
-        // Stores a given value, 5 by default.
-        return simpleStorageInstance.set(5, {from: accounts[0]})
-      }).then((result) => {
-        // Get the value from the contract to prove it worked.
-        return simpleStorageInstance.get.call(accounts[0])
-      }).then((result) => {
-        // Update state with the result.
-        return this.setState({ storageValue: result.c[0] })
-      })
+    petition.deployed().then((instance) => {
+      return this.setState({ petitionInstance: instance })
     })
   }
 
@@ -71,7 +78,7 @@ class App extends Component {
       <div className="App">
         <Home />
       </div>
-    );
+    )
   }
 }
 
