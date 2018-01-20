@@ -20,12 +20,17 @@ contract IdManager is Ownable {
     function registerId(address _address, uint _rememberMeId, bytes32 _name, bytes32 _region) public onlyOwner {
         require(!idMap[_address].exists);
         ID storage theId = idMap[_address];
+        theId.exists = true;
         theId.rememberMeId = _rememberMeId;
         theId.name = _name;
         theId.region = _region;
     }
 
-    function isValidId() public view returns (bool) {
-        
+    function removeId(address _address) public onlyOwner { // test this!
+        delete idMap[_address];
+    }
+
+    function isValidId(address _address) public view returns (bool) {
+        return idMap[_address].exists;
     }
 }
