@@ -2,19 +2,25 @@ pragma solidity ^0.4.18;
 
 import "./IdManage.sol";
 
-contract Petition {
+contract PetitionManager {
 
-    mapping(address => bool) hasVoted;
+    struct Petition {
+        mapping(address => bool) hasVoted;
+        string description;
+        uint votesFor;
+        uint votesAgainst;
+        uint256 endEpoch;
+    }
 
-    address idManager;
-    string description;
-    uint votesFor;
-    uint votesAgainst;
-    uint256 endEpoch;
+    Petition[] allPetitions;
+    address idManager;    
 
-    function Petition(string _description, address _idManager) {
-        description = _description;
+    function PetitionManager(address _idManager) public {
         idManager = _idManager;
+    }
+
+    function getTenPetitions(uint startIndex) public view returns {
+        
     }
 
     function vote(bytes32 vote) {
@@ -34,9 +40,3 @@ contract Petition {
         }
     }
 }
-
-// contract PetitionManager {
-//     function VotingManager() {
-
-//     }
-// }
