@@ -7,6 +7,7 @@ from yoti_python_sdk import Client
 from settings import (
     YOTI_APPLICATION_ID,
     YOTI_CLIENT_SDK_ID,
+    YOTI_SCENARIO_ID,
     YOTI_KEY_FILE_PATH,
 )
 
@@ -15,7 +16,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', app_id=YOTI_APPLICATION_ID)
+    return render_template('index.html', app_id=YOTI_APPLICATION_ID, scenario_id=YOTI_SCENARIO_ID)
 
 
 @app.route('/id/auth')
