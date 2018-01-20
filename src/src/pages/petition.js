@@ -81,12 +81,6 @@ export default class Petition extends Component {
                 <h5 className="card-header">Leave a Comment:</h5>
                 <div className="card-body">
                   <form>
-                    <div className="form-group">
-                      <textarea className="form-control" rows="3" />
-                    </div>
-                    <button type="submit" className="btn btn-primary">
-                      Submit
-                    </button>
                   </form>
                 </div>
               </div>
@@ -158,7 +152,10 @@ export default class Petition extends Component {
               <div className="card my-4">
                 <h5 className="card-header">Sign now!</h5>
                 <div className="card-body">
-                    Add button here!
+                    
+                <span data-yoti-type="inline" data-yoti-scenario-id="17afa53a-dc34-481a-b3e1-f6fe33afbe69" data-yoti-application-id="cac0c797-c49f-40a6-8a00-d3e1dfe679e0" >
+        Sign petition
+    </span>
                 </div>
               </div>
 
