@@ -2,3 +2,4 @@
 /src/build
 /src/build_webpack
 **/.DS_Store
+/src/frontEndTemplate
