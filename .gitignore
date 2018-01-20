@@ -1,3 +1,4 @@
 /src/node_modules
 /src/build
 /src/build_webpack
+**/.DS_Store
