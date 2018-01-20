@@ -6,8 +6,13 @@
 
  body {
     padding-top: 54px;
+    font-family: 'Open Sans', sans-serif;
   }
   
+  .brand-font {
+    font-family: 'Hind', sans-serif !important;
+  }
+
   @media (min-width: 992px) {
     body {
       padding-top: 56px;
@@ -15,9 +20,10 @@
   }
   
   .business-header {
-    height: 50vh;
-    min-height: 300px;
-    background: url('http://placehold.it/1920x400') center center no-repeat scroll;
+    height: 10vh;
+    min-height: 200px;
+    background-color: #4ABDAC;
+    /* background: url('http://placehold.it/1920x400') center center no-repeat scroll; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;

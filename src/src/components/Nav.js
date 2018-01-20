@@ -1,11 +1,13 @@
 import React, { Component } from "react"
+import colors from './../utils/colors'
 
 export default class Nav extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top" style={{backgroundColor : 'white'}}>
         <div className="container">
-          <a className="navbar-brand" href="#">Voti</a>
+          {/* <a className="navbar-brand" href="#"></a> */}
+          <img src="https://raw.githubusercontent.com/NeoSouldier/Voti/master/voti-logo.png" style={{height: '40px'}}/>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
