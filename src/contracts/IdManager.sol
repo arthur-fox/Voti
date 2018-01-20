@@ -24,7 +24,7 @@ contract IdManager is Ownable {
         theId.region = _region;
     }
 
-    function removeId(address _address) public onlyOwner { // test this!
+    function removeId(address _address) public onlyOwner {
         delete idMap[_address];
     }
 
