@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import SimpleStorageContract from '../build/contracts/SimpleStorage.json'
 import getWeb3 from './utils/getWeb3'
+import { Route } from 'react-router'
+import Petition from './pages/petition'
 
 import './css/oswald.css'
 import './css/open-sans.css'
@@ -73,6 +75,7 @@ class App extends Component {
         <nav className="navbar pure-menu pure-menu-horizontal">
             <a href="#" className="pure-menu-heading pure-menu-link">Truffle Box</a>
         </nav>
+        <Route path="/dashboard" component={Petition}/>
 
         <main className="container">
           <div className="pure-g">
