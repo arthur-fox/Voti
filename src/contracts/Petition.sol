@@ -26,4 +26,8 @@ contract Petition {
 
         votesFor++;
     }
+
+    function checkHasVoted() public view returns (bool) {
+        return hasVoted[msg.sender];
+    }
 }
