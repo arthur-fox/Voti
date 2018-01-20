@@ -17,10 +17,10 @@ contract Petition {
     uint256 constant VOTE_FOR = 1;
     uint256 constant VOTE_AGAINST = 0;
 
-    function Petition(address _idManager, string _description, uint256 _endEpoch) public {
+    function Petition(address _idManager, string _description, uint256 _dayLength) public {
         idManager = _idManager;
         description = _description;
-        endEpoch = _endEpoch;
+        endEpoch = now + (_dayLength * 1 days);
     }
 
     function vote(uint256 _vote) public {

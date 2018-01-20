@@ -30,7 +30,7 @@ contract IdManager is Ownable {
         delete idMap[_address];
     }
 
-    function isValidId(address _address) public view returns (bool) {
-        return idMap[_address].exists;
+    function isValidId() public view returns (bool) {
+        return idMap[msg.sender].exists;
     }
 }
