@@ -28,14 +28,7 @@ export default class PetitionComponent extends Component {
         web3: results.web3
       })
 
-      // Instantiate contract once web3 provided.
-      this.instantiateContract() // TODO - In future we should not instantiate the contract here!!!
-    })
-    .then(() => {
-      return this.checkIfVotedAlready()
-    })
-    .then(result => {
-      // TODO - If we have voted already, make sure the user cannot vote!!!
+      this.instantiateContract()
     })
     .catch(() => {
       console.log('Error finding web3.')
@@ -44,11 +37,14 @@ export default class PetitionComponent extends Component {
   
   checkIfVotedAlready() {
     let pInstance = this.state.petitionInstance
-
+    console.log("Inside checkifVoted()")
+    console.log("Petition instance: " + pInstance);
     this.state.web3.eth.getAccounts((error, accounts) => {
-      return pInstance.hasVoted.call(accounts[0])
-    }).then((result) => {
-      return this.setState({ hasVoted: result.c[0] })
+      return pInstance.checkHasVoted.call({from: accounts[0]})
+      .then((result) => {
+        // this.placeVote()
+        return this.setState({ hasVoted: result })
+      })
     })
   }
 
@@ -57,18 +53,26 @@ export default class PetitionComponent extends Component {
 
     this.state.web3.eth.getAccounts((error, accounts) => {
       return pInstance.vote({from: accounts[0]})
-    }).then(() => {
-      // TODO - we should wait until the vote has been registered by the blockchain - use solidity events for this!
+      // .then(() => {
+      //   // TODO - we should wait until the vote has been registered by the blockchain - use solidity events for this!
+      //   // TODO - Update the vote count here!
+      // })
     })
   }
 
   instantiateContract() {
     const contract = require('truffle-contract')
     const petition = contract(Petition)
+    console.log("Instantiating")
+    console.log("Should be contract: " + petition)
     petition.setProvider(this.state.web3.currentProvider)
-
+    console.log("Provider set: " + petition)
     petition.deployed().then((instance) => {
-      return this.setState({ petitionInstance: instance })
+      console.log("Should be the instance " + instance)
+      return this.setState({ petitionInstance: instance }, () => {
+        console.log("Calling check if voted...")
+        this.checkIfVotedAlready()
+      })
     })
   }
 

@@ -22,11 +22,11 @@ contract Petition {
 
     function vote() public {
         // check ID is valid
-        require(idManager.delegatecall(bytes4(keccak256("isValidId()"))));
+        // require(idManager.delegatecall(bytes4(keccak256("isValidId()"))));
         // Shouldn't really do this as time can be manipulated by miners!
-        require(now < endEpoch);
+        // require(now < endEpoch);
         require(!hasVoted[msg.sender]);
-
+        hasVoted[msg.sender] = true;
         votesFor++;
     }
 

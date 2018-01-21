@@ -1,5 +1,7 @@
-var SimpleStorage = artifacts.require("./SimpleStorage.sol");
+var Petition = artifacts.require("./Petition.sol")
+var IdManager = artifacts.require("./IDManager.sol")
 
 module.exports = function(deployer) {
-  deployer.deploy(SimpleStorage);
+  deployer.deploy(Petition)
+  deployer.deploy(IdManager)
 };
