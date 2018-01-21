@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import Nav from "./../components/Nav"
 import { Link } from 'react-router-dom'
+import colors from './../utils/colors'
 
 export default class Home extends Component {
   render() {
@@ -24,38 +25,10 @@ export default class Home extends Component {
             <div className="col-sm-8">
               <h2 className="mt-4">What We Do</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-                deserunt neque tempore recusandae animi soluta quasi? Asperiores
-                rem dolore eaque vel, porro, soluta unde debitis aliquam
-                laboriosam. Repellat explicabo, maiores!
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis
-                optio neque consectetur consequatur magni in nisi, natus beatae
-                quidem quam odit commodi ducimus totam eum, alias, adipisci
-                nesciunt voluptate. Voluptatum.
-              </p>
-              <p>
-                <a className="btn btn-primary btn-lg" href="#">
-                  Call to Action &raquo;
-                </a>
+                We are securing petitions for the 21st century, no more bots and untrust worthy polls!
               </p>
             </div>
             <div className="col-sm-4">
-              {/* <h2 className="mt-4">Contact Us</h2> */}
-              {/* <address>
-            <strong>Start Bootstrap</strong>
-            <br>3481 Melrose Place
-            <br>Beverly Hills, CA 90210
-            <br>
-          </address> */}
-              {/* <address>
-            <abbr title="Phone">P:</abbr>
-            (123) 456-7890
-            <br>
-            <abbr title="Email">E:</abbr>
-            <a href="mailto:#">name@example.com</a>
-          </address> */}
             </div>
           </div>
 
@@ -64,19 +37,19 @@ export default class Home extends Component {
               <div className="card">
                 <img
                   className="card-img-top"
-                  src="http://placehold.it/300x200"
+                  src="http://www.islamicinvitationturkey.com/wp-content/uploads/2017/04/ad_189284638.jpg"
                   alt=""
                 />
                 <div className="card-body">
-                  <h4 className="card-title">Card title</h4>
+                  <h4 className="card-title">Stop the war!</h4>
                   <p className="card-text">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Sapiente esse necessitatibus neque sequi doloribus.
                   </p>
                 </div>
                 <div className="card-footer">
-                  <a href="#" className="btn btn-primary">
-                    Find Out More!
+                  <a href="#" className="btn btn-primary"  style={{backgroundColor: colors.green, borderColor: colors.green}}>
+                    Sign
                   </a>
                 </div>
               </div>
@@ -85,12 +58,12 @@ export default class Home extends Component {
               <div className="card">
                 <img
                   className="card-img-top"
-                  src="http://placehold.it/300x200"
+                  src="https://news.nationalgeographic.com/content/dam/news/2016/09/08/humpback-whales/01humpbackwhales.jpg"
                   alt=""
                 />
 
                 <div className="card-body">
-                  <h4 className="card-title">Card title</h4>
+                  <h4 className="card-title">Save the whales!</h4>
                   <p className="card-text">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Sapiente esse necessitatibus neque sequi doloribus totam ut
@@ -98,8 +71,8 @@ export default class Home extends Component {
                   </p>
                 </div>
                 <div className="card-footer">
-                  <a href="#" className="btn btn-primary">
-                    Find Out More!
+                  <a href="#" className="btn btn-primary"  style={{backgroundColor: colors.green, borderColor: colors.green}}>
+                    Sign
                   </a>
                 </div>
               </div>
@@ -108,21 +81,22 @@ export default class Home extends Component {
               <div className="card">
                 <img
                   className="card-img-top"
-                  src="http://placehold.it/300x200"
+                  src="http://img2.thejournal.ie/inline/1465921/original?width=630&version=1465921"
                   alt=""
+                  style={{minHeight:'191px'}}
                 />
-                <Link to="/petition">
-                    <div className="card-body">
-                        <h4 className="card-title">Card title</h4>
+                  <a href="/petition">
+                    <div className="card-body" style={{color:'black'}}>
+                        <h4 className="card-title">Down with this sort of thing!</h4>
                         <p className="card-text">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                             Sapiente esse necessitatibus neque.
                         </p>
                     </div>
-                </Link>
+                  </a>
                 <div className="card-footer">
-                  <a href="#" className="btn btn-primary">
-                    Find Out More!
+                  <a href="/petition" className="btn btn-primary" style={{backgroundColor: colors.green, borderColor: colors.green}}>
+                    Sign
                   </a>
                 </div>
               </div>
