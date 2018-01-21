@@ -11,7 +11,6 @@ contract Petition {
     string description;
     uint256 endEpoch;
     mapping(address => bool) hasVoted;
-    // Should beware of overflows here! (maybe use safeMath library...)
     uint256 public votesFor;    
     
     function Petition(address _idManager, string _description, uint256 _dayLength) public {

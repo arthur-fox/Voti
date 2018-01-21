@@ -12,10 +12,8 @@ contract IdManager is Ownable {
 
     mapping(address => ID) public idMap;
 
-    // Entity that controls Id verification would instantiate the contract - therefore becoming "owner"
     function IdManager() public {}
 
-    // "onlyOwner" modifier only allows the controlling entity to register an id
     function registerId(address _address, bytes32 _name, bytes32 _region) public onlyOwner {
         require(!idMap[_address].exists);
         ID storage theId = idMap[_address];
