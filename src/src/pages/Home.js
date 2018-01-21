@@ -85,7 +85,7 @@ export default class Home extends Component {
                   alt=""
                   style={{minHeight:'191px'}}
                 />
-                <Link to="/petition">
+                  <a href="/petition">
                     <div className="card-body" style={{color:'black'}}>
                         <h4 className="card-title">Down with this sort of thing!</h4>
                         <p className="card-text">
@@ -93,9 +93,9 @@ export default class Home extends Component {
                             Sapiente esse necessitatibus neque.
                         </p>
                     </div>
-                </Link>
+                  </a>
                 <div className="card-footer">
-                  <a href="#" className="btn btn-primary" style={{backgroundColor: colors.green, borderColor: colors.green}}>
+                  <a href="/petition" className="btn btn-primary" style={{backgroundColor: colors.green, borderColor: colors.green}}>
                     Sign
                   </a>
                 </div>

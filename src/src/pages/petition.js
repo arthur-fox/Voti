@@ -118,10 +118,11 @@ export default class PetitionComponent extends Component {
               <div className="card my-4">
                 <h5 className="card-header">Sign now!</h5>
                 <div className="card-body">
-                    
-                <span data-yoti-type="inline" data-yoti-scenario-id="17afa53a-dc34-481a-b3e1-f6fe33afbe69" data-yoti-application-id="cac0c797-c49f-40a6-8a00-d3e1dfe679e0" >
-                    Sign petition
-                </span>
+                    We need your signature to make this happen!
+                    <span style={{display: 'inline-block', paddingTop: '28px 0', fontWeight: '600'}}> Number of votes so far: {this.state.totalVotes} </span>
+                    <span data-yoti-type="inline" data-yoti-scenario-id="17afa53a-dc34-481a-b3e1-f6fe33afbe69" data-yoti-application-id="cac0c797-c49f-40a6-8a00-d3e1dfe679e0" >
+                        Sign petition
+                    </span>
                 </div>
               </div>
             </div>
