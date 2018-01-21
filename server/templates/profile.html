@@ -1,47 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User Profile</title>
-</head>
-<body>
-    <h3><a href="/">Home</a></h3>
-    <table>
-        {% if user_id %}
-            <tr>
-                <td>Remember me ID:</td>
-                <td>{{user_id}}</td>
-            </tr>
-        {% endif %}
 
-        {% if given_names %}
-            <tr>
-                <td>Given Names:</td>
-                <td>{{given_names}}</td>
-            </tr>
-        {% endif %}
+  <head>
 
-        {% if family_name %}
-            <tr>
-                <td>Family Name:</td>
-                <td>{{family_name}}</td>
-            </tr>
-        {% endif %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <title>Voti</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-        {% if email_address %}
-            <tr>
-                <td>Email Address:</td>
-                <td>{{email_address}}</td>
-            </tr>
-        {% endif %}
+    <!-- Custom styles for this template -->
+    <link href="/static/css/round-about.css" rel="stylesheet">
 
-        {% if nationality %}
-            <tr>
-                <td>Nationality:</td>
-                <td>{{nationality}}</td>
-            </tr>
-        {% endif %}
-    </table>
-</body>
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:white">
+      <div class="container">
+        <img src="https://raw.githubusercontent.com/NeoSouldier/Voti/master/voti-logo.png" style="height:40px"/>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Vote</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Create a petition</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1 class="my-4">Thank You!
+      </h1>
+      <p>Your signature is making a difference.</p>
+      <div class="row">
+        <div class="col-lg-4 col-sm-0 text-center mb-4">
+        </div>
+        <div class="col-lg-4 col-sm-12 text-center mb-4">
+          <i class="fa fa-check fa-5x" aria-hidden="true" style="background-color:#4ABDAC;padding: 63px;border-radius: 50%;margin: 21px;color: white;"></i>
+          <h3> {{given_names}} {{family_name}}
+          </h3>
+          <p>Share with your friends on social media to reach more people!</p>
+        </div>
+        <div class="col-lg-4 col-sm-0 text-center mb-4">
+        </div>
+      </div>
+    </div>
+
+    <footer class="py-5" style="background-color:#F7B733">
+      <div class="container">
+        <p class="m-0 text-center">Copyright &copy; Voti 2018</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
