@@ -20,7 +20,13 @@ contract Petition {
     }
 
     function vote() public {
-        require(idManager.delegatecall(bytes4(keccak256("isValidId()"))));
+        // require(idManager.delegatecall(bytes4(keccak256("isValidId()"))));
+        assembly { //
+            let returnSize := 32
+            calldatacopy(0xff, 0, calldatasize)
+            let _retVal := delegatecall(gas, currentVersion, 0xff, calldatasize, 0, returnSize)
+            switch _retval case 0 { revert(0,0) } default { return(0, returnSize) }
+        }
         // Shouldn't really do this as time can be manipulated by miners!
         require(now < endEpoch);
         require(!hasVoted[msg.sender]);

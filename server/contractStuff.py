@@ -4,4 +4,4 @@ from web3 import Web3, HTTPProvider
 web3 = Web3(HTTPProvider('http://localhost:9545'))
 
 # Calling the below shows we are able to query the local node
-web3.eth.blockNumber
+print(web3.eth.blockNumber)
