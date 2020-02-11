@@ -36,7 +36,7 @@ datashape==0.5.4
 decorator==4.0.11
 distlib==0.2.5
 distributed==1.16.3
-Django==1.11
+Django==1.11.28
 -e git+https://github.com/getyoti/yoti-python-sdk@b60e18f0020fcf8359ac96347ccd10fa525e139b#egg=django_yoti&subdirectory=plugins\django_yoti
 docutils==0.13.1
 entrypoints==0.2.2
