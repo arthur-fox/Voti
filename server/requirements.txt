@@ -49,7 +49,7 @@ eth-utils==0.7.4
 fastcache==1.0.2
 filelock==2.0.13
 Flask==0.11.1
-Flask-Cors==3.0.2
+Flask-Cors==3.0.9
 -e git+https://github.com/getyoti/yoti-python-sdk@b60e18f0020fcf8359ac96347ccd10fa525e139b#egg=flask_yoti&subdirectory=plugins\flask_yoti
 future==0.15.2
 geopy==1.11.0
